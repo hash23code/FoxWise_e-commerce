@@ -1,11 +1,11 @@
 {
-  "name": "foxwise-client",
+  "name": "foxwise-ecommerce",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3010",
+    "dev": "next dev -p 3020",
     "build": "next build",
-    "start": "next start -p 3010",
+    "start": "next start -p 3020",
     "lint": "next lint"
   },
   "dependencies": {
