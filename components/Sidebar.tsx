@@ -6,16 +6,18 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
-  Users,
-  Briefcase,
-  Calendar,
-  DollarSign,
-  Mail,
-  MessageSquare,
+  Package,
+  Search,
+  Globe,
+  Calculator,
+  Warehouse,
+  Target,
+  TrendingUp,
+  Plug,
   Settings,
-  Building2,
   Menu,
   X,
+  ShoppingCart,
 } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 import { motion, AnimatePresence } from "framer-motion";
@@ -49,64 +51,58 @@ export default function Sidebar() {
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      name: "Clients",
-      href: "/clients",
-      icon: Users,
+      name: "Listings",
+      href: "/listings",
+      icon: ShoppingCart,
+      gradient: "from-emerald-500 to-teal-600"
+    },
+    {
+      name: "Research",
+      href: "/research",
+      icon: Search,
       gradient: "from-purple-500 to-pink-500"
     },
     {
-      name: "Jobs",
-      href: "/jobs",
-      icon: Briefcase,
-      gradient: "from-green-500 to-emerald-500"
+      name: "Sourcing",
+      href: "/sourcing",
+      icon: Globe,
+      gradient: "from-orange-500 to-red-600"
     },
     {
-      name: "Activités",
-      href: "/activities",
-      icon: Briefcase,
-      gradient: "from-cyan-500 to-blue-500"
+      name: "Profit Calc",
+      href: "/profit-calculator",
+      icon: Calculator,
+      gradient: "from-green-500 to-emerald-600"
     },
     {
-      name: "Secteurs",
-      href: "/sectors",
-      icon: Building2,
-      gradient: "from-orange-500 to-red-500"
-    },
-    {
-      name: "Employés",
-      href: "/employees",
-      icon: Users,
+      name: "Inventory",
+      href: "/inventory",
+      icon: Warehouse,
       gradient: "from-indigo-500 to-purple-500"
     },
     {
-      name: "Calendrier",
-      href: "/calendar",
-      icon: Calendar,
-      gradient: "from-yellow-500 to-orange-500"
+      name: "Niches",
+      href: "/niches",
+      icon: Target,
+      gradient: "from-pink-500 to-rose-600"
     },
     {
-      name: "Paiements",
-      href: "/payments",
-      icon: DollarSign,
-      gradient: "from-teal-500 to-cyan-500"
+      name: "Analytics",
+      href: "/analytics",
+      icon: TrendingUp,
+      gradient: "from-teal-500 to-cyan-600"
     },
     {
-      name: "Emails",
-      href: "/emails",
-      icon: Mail,
-      gradient: "from-blue-500 to-indigo-500"
+      name: "Platforms",
+      href: "/platforms",
+      icon: Plug,
+      gradient: "from-amber-500 to-orange-600"
     },
     {
-      name: "Chat",
-      href: "/chat",
-      icon: MessageSquare,
-      gradient: "from-pink-500 to-purple-500"
-    },
-    {
-      name: "Paramètres",
+      name: "Settings",
       href: "/settings",
       icon: Settings,
-      gradient: "from-gray-500 to-slate-500"
+      gradient: "from-gray-500 to-slate-600"
     },
   ];
 
@@ -114,14 +110,12 @@ export default function Sidebar() {
     <>
       {/* Logo */}
       <Link href="/" className="p-4 sm:p-6 border-b border-gray-800 flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
-        <Image
-          src="/logo.png"
-          alt="FoxWise Client"
-          width={140}
-          height={140}
-          className="object-contain"
-          priority
-        />
+        <div className="text-center">
+          <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
+            FoxWise
+          </div>
+          <div className="text-xs sm:text-sm text-gray-400 mt-1">E-Commerce</div>
+        </div>
       </Link>
 
       {/* Navigation */}
@@ -160,7 +154,7 @@ export default function Sidebar() {
       <div className="p-3 sm:p-4 border-t border-gray-800">
         <div className="flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3">
           <UserButton afterSignOutUrl="/sign-in" />
-          <span className="text-sm text-gray-400">Mon Compte</span>
+          <span className="text-sm text-gray-400">My Account</span>
         </div>
       </div>
     </>
